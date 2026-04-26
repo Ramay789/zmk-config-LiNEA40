@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,,,
+            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,,,,
             <&zip_xy_to_scroll_mapper>;
     };
 };
@@ -129,14 +129,14 @@
         bt2_mac: bt2_mac {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 2 &bt BT_SEL 2>;
+            bindings = <&to 3 &bt BT_SEL 2>;
             label = "BT2_MAC";
         };
 
         bt3_iPad: bt3_iPad {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 3 &bt BT_SEL 3>;
+            bindings = <&to 6 &bt BT_SEL 3>;
             label = "BT3_IPAD";
         };
 
@@ -153,41 +153,21 @@
 
         win_default {
             bindings = <
-&kp Q  &kp W   &kp E  &kp R                   &kp T                                               &kp Y        &kp U  &kp I            &kp O    &kp P
-&kp A  &kp S   &kp D  &kp F                   &kp G                                               &kp H        &kp J  &kp K            &kp L    &lt 0 MINUS
-&kp Z  &kp X   &kp C  &kp V                   &kp B                                               &kp N        &kp M  &kp COMMA        &kp DOT  &lt 4 TAB
-&none  &mo 11  &none  &mt LEFT_COMMAND LANG2  &lt 8 SPACE  &mt LEFT_SHIFT LANG1    &kp BACKSPACE  &lt 9 ENTER         &mt LEFT_ALT F7  &none    &kp ESCAPE
+&kp Q  &kp W  &kp E  &kp R            &kp T                                               &kp Y         &kp U  &kp I            &kp O    &kp P
+&kp A  &kp S  &kp D  &kp F            &kp G                                               &kp H         &kp J  &kp K            &kp L    &lt 0 MINUS
+&kp Z  &kp X  &kp C  &kp V            &kp B                                               &kp N         &kp M  &kp COMMA        &kp DOT  &lt 10 TAB
+&none  &mo 7  &none  &mt LCTRL LANG2  &lt 1 SPACE  &mt LEFT_SHIFT LANG1    &kp BACKSPACE  &lt 12 ENTER         &mt LEFT_ALT F7  &none    &kp ESCAPE
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>;
         };
 
-        MOUSE {
+        win_Number {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans    &trans    &trans  &trans
-&trans  &trans  &trans  &trans  &trans                    &trans  &mkp MB1  &mkp MB2  &mo 5   &trans
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans    &trans    &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans            &trans    &trans  &trans
-            >;
-        };
-
-        mac_default {
-            bindings = <
-&kp Q  &kp W   &kp E  &kp R                   &kp T                                               &kp Y        &kp U  &kp I               &kp O    &kp P
-&kp A  &kp S   &kp D  &kp F                   &kp G                                               &kp H        &kp J  &kp K               &kp L    &lt 0 MINUS
-&kp Z  &kp X   &kp C  &kp V                   &kp B                                               &kp N        &kp M  &kp COMMA           &kp DOT  &lt 6 TAB
-&none  &mo 11  &none  &mt LEFT_COMMAND LANG2  &lt 8 SPACE  &mt LEFT_SHIFT LANG1    &kp BACKSPACE  &lt 9 ENTER         &mt LEFT_ALT LC(K)  &none    &kp ESCAPE
-            >;
-
-            sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>;
-        };
-
-        ipad_default {
-            bindings = <
-&kp Q  &kp W   &kp E  &kp R                   &kp T                                                    &kp Y        &kp U  &kp I               &kp O    &kp P
-&kp A  &kp S   &kp D  &kp F                   &kp G                                                    &kp H        &kp J  &kp K               &kp L    &lt 0 MINUS
-&kp Z  &kp X   &kp C  &kp V                   &kp B                                                    &kp N        &kp M  &kp COMMA           &kp DOT  &lt 7 TAB
-&none  &mo 11  &none  &mt LEFT_COMMAND LANG2  &lt 8 SPACE  &mt LEFT_SHIFT LANGUAGE_1    &kp BACKSPACE  &lt 9 ENTER         &mt LEFT_ALT LC(K)  &none    &kp ESCAPE
+&kp PERCENT      &kp KP_NUMBER_9  &kp KP_NUMBER_8  &kp KP_NUMBER_7  &kp BACKSLASH                    &kp KP_ASTERISK    &kp GRAVE      &kp UP_ARROW  &kp KP_EQUAL  &kp KP_PLUS
+&kp DOLLAR       &kp KP_NUMBER_6  &kp KP_NUMBER_5  &kp KP_NUMBER_4  &kp PIPE                         &kp KP_SLASH       &kp LEFT       &kp DOWN      &kp RIGHT     &kp KP_MINUS
+&kp KP_NUMBER_0  &kp KP_NUMBER_3  &kp KP_NUMBER_2  &kp KP_NUMBER_1  &kp EQUAL                        &kp LA(LS(MINUS))  &kp LA(MINUS)  &kp COMMA     &kp PERIOD    &trans
+&trans           &trans           &trans           &trans           &trans         &trans    &trans  &trans                            &trans        &trans        &trans
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>;
@@ -197,33 +177,66 @@
             bindings = <
 &none  &none               &kp LG(UP_ARROW)  &none                &none                         &none   &none     &kp UP_ARROW     &none            &kp LG(PRINTSCREEN)
 &none  &kp LG(LEFT_ARROW)  &kp LG(DOWN)      &kp LG(RIGHT_ARROW)  &none                         &none   &kp LEFT  &kp DOWN         &kp RIGHT_ARROW  &kp PRINTSCREEN
-&none  &none               &none             &none                &none                         &none   &none     &kp COMMA        &kp PERIOD       &lt 4 TAB
+&none  &none               &none             &none                &none                         &none   &none     &kp COMMA        &kp PERIOD       &lt 10 TAB
 &none  &none               &none             &kp BACKSPACE        &trans  &kp DELETE    &trans  &trans            &mt LEFT_ALT F7  &none            &kp ESC
             >;
 
             sensor-bindings = <&re_kp LG(EQUAL) LG(MINUS)>;
         };
 
-        SCROLL {
+        mac_default {
             bindings = <
-&none          &none           &kp UP_ARROW  &none            &none                     &kp KP_MULTIPLY  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp KP_PLUS
-&kp LA(LCTRL)  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT_ARROW  &none                     &kp KP_SLASH     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp KP_MINUS
-&kp LCTRL      &kp PAGE_DOWN   &kp END       &kp PAGE_UP      &none                     &kp N0           &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans
-&trans         &trans          &trans        &trans           &trans  &trans    &trans  &trans                         &trans        &trans        &trans
+&kp Q  &kp W  &kp E  &kp R                   &kp T                                               &kp Y         &kp U  &kp I               &kp O    &kp P
+&kp A  &kp S  &kp D  &kp F                   &kp G                                               &kp H         &kp J  &kp K               &kp L    &lt 0 MINUS
+&kp Z  &kp X  &kp C  &kp V                   &kp B                                               &kp N         &kp M  &kp COMMA           &kp DOT  &lt 5 TAB
+&none  &mo 7  &none  &mt LEFT_COMMAND LANG2  &lt 4 SPACE  &mt LEFT_SHIFT LANG1    &kp BACKSPACE  &lt 12 ENTER         &mt LEFT_ALT LC(K)  &none    &kp ESCAPE
+            >;
+
+            sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>;
+        };
+
+        mac_Number {
+            bindings = <
+&kp PERCENT      &kp KP_NUMBER_9  &kp KP_NUMBER_8  &kp KP_NUMBER_7  &kp BACKSLASH                    &kp KP_ASTERISK    &kp GRAVE      &kp UP_ARROW  &kp KP_EQUAL  &kp KP_PLUS
+&kp DOLLAR       &kp KP_NUMBER_6  &kp KP_NUMBER_5  &kp KP_NUMBER_4  &kp PIPE                         &kp KP_SLASH       &kp LEFT       &kp DOWN      &kp RIGHT     &kp KP_MINUS
+&kp KP_NUMBER_0  &kp KP_NUMBER_3  &kp KP_NUMBER_2  &kp KP_NUMBER_1  &kp EQUAL                        &kp LA(LS(MINUS))  &kp LA(MINUS)  &kp COMMA     &kp PERIOD    &trans
+&trans           &trans           &trans           &trans           &trans         &trans    &trans  &trans                            &trans        &trans        &trans
+            >;
+
+            sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>;
+        };
+
+        mac_MissionControll {
+            bindings = <
+&none  &none               &kp LC(UP_ARROW)  &none                &none                         &none   &none     &kp UP_ARROW  &none            &kp LG(LS(NUMBER_3))
+&none  &kp LC(LEFT_ARROW)  &kp LC(DOWN)      &kp LC(RIGHT_ARROW)  &none                         &none   &kp LEFT  &kp DOWN      &kp RIGHT_ARROW  &kp LG(LS(F5))
+&none  &none               &none             &none                &none                         &none   &none     &kp COMMA     &kp PERIOD       &trans
+&none  &none               &none             &kp BACKSPACE        &trans  &kp DELETE    &trans  &trans            &trans        &trans           &trans
             >;
 
             sensor-bindings = <&re_kp LG(EQUAL) LG(MINUS)>;
         };
 
-        mac_MissionControll {
+        ipad_default {
             bindings = <
-&none  &none               &kp LC(UP_ARROW)  &none                &none                                &none        &none     &kp UP_ARROW        &none            &kp LG(LS(NUMBER_3))
-&none  &kp LC(LEFT_ARROW)  &kp LC(DOWN)      &kp LC(RIGHT_ARROW)  &none                                &none        &kp LEFT  &kp DOWN            &kp RIGHT_ARROW  &kp LG(LS(F5))
-&none  &none               &none             &none                &none                                &none        &none     &kp COMMA           &kp PERIOD       &lt 6 TAB
-&none  &none               &none             &kp BACKSPACE        &trans  &kp DELETE    &kp BACKSPACE  &lt 9 ENTER            &mt LEFT_ALT LC(K)  &none            &kp ESC
+&kp Q  &kp W  &kp E  &kp R                   &kp T                                                    &kp Y         &kp U  &kp I               &kp O    &kp P
+&kp A  &kp S  &kp D  &kp F                   &kp G                                                    &kp H         &kp J  &kp K               &kp L    &lt 0 MINUS
+&kp Z  &kp X  &kp C  &kp V                   &kp B                                                    &kp N         &kp M  &kp COMMA           &kp DOT  &lt 8 TAB
+&none  &mo 7  &none  &mt LEFT_COMMAND LANG2  &lt 7 SPACE  &mt LEFT_SHIFT LANGUAGE_1    &kp BACKSPACE  &lt 12 ENTER         &mt LEFT_ALT LC(K)  &none    &kp ESCAPE
             >;
 
-            sensor-bindings = <&re_kp LG(EQUAL) LG(MINUS)>;
+            sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>;
+        };
+
+        ipad_Number {
+            bindings = <
+&kp PERCENT      &kp KP_NUMBER_9  &kp KP_NUMBER_8  &kp KP_NUMBER_7  &kp BACKSLASH                                    &kp KP_ASTERISK    &kp GRAVE      &kp UP_ARROW  &kp KP_EQUAL  &kp KP_PLUS
+&kp DOLLAR       &kp KP_NUMBER_6  &kp KP_NUMBER_5  &kp KP_NUMBER_4  &kp PIPE                                         &kp KP_SLASH       &kp LEFT       &kp DOWN      &kp RIGHT     &kp KP_MINUS
+&kp KP_NUMBER_0  &kp KP_NUMBER_3  &kp KP_NUMBER_2  &kp KP_NUMBER_1  &kp EQUAL                                        &kp LA(LS(MINUS))  &kp LA(MINUS)  &kp COMMA     &kp PERIOD    &trans
+&trans           &trans           &trans           &trans           &trans         &mt LEFT_COMMAND LANG1    &trans  &trans                            &trans        &trans        &trans
+            >;
+
+            sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>;
         };
 
         iPad_something {
@@ -235,15 +248,24 @@
             >;
         };
 
-        Number {
+        MOUSE {
             bindings = <
-&kp PERCENT      &kp KP_NUMBER_9  &kp KP_NUMBER_8  &kp KP_NUMBER_7  &kp BACKSLASH                    &kp KP_ASTERISK    &kp GRAVE      &kp UP_ARROW  &kp KP_EQUAL  &kp KP_PLUS
-&kp DOLLAR       &kp KP_NUMBER_6  &kp KP_NUMBER_5  &kp KP_NUMBER_4  &kp PIPE                         &kp KP_SLASH       &kp LEFT       &kp DOWN      &kp RIGHT     &kp KP_MINUS
-&kp KP_NUMBER_0  &kp KP_NUMBER_3  &kp KP_NUMBER_2  &kp KP_NUMBER_1  &kp EQUAL                        &kp LA(LS(MINUS))  &kp LA(MINUS)  &kp COMMA     &kp PERIOD    &trans
-&trans           &trans           &trans           &trans           &trans         &trans    &trans  &trans                            &trans        &trans        &trans
+&none  &none  &none  &none  &none                  &none  &none     &none     &none  &none
+&none  &none  &none  &none  &none                  &none  &mkp MB1  &mkp MB2  &mo 5  &none
+&none  &none  &none  &none  &none                  &none  &none     &none     &none  &none
+&none  &none  &none  &none  &none  &none    &none  &none            &none     &none  &none
+            >;
+        };
+
+        SCROLL {
+            bindings = <
+&none          &none           &kp UP_ARROW  &none            &none                  &kp KP_MULTIPLY  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp KP_PLUS
+&kp LA(LCTRL)  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT_ARROW  &none                  &kp KP_SLASH     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp KP_MINUS
+&kp LCTRL      &kp PAGE_DOWN   &kp END       &kp PAGE_UP      &none                  &kp N0           &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none
+&none          &none           &none         &none            &none  &none    &none  &none                          &none         &none         &none
             >;
 
-            sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>;
+            sensor-bindings = <&re_kp LG(EQUAL) LG(MINUS)>;
         };
 
         Mark_Blacket {
