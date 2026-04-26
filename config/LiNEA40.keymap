@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&zip_xy_to_scroll_mapper>;
     };
 };
@@ -146,21 +146,21 @@
             label = "BT_WIN";
         };
 
-        bt2_HomeWin: bt2_mac {
+        bt1_HomeWin: bt2_mac {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&to 4 &bt BT_SEL 1>;
             label = "BT2_MAC";
         };
 
-        bt3_iPad: bt3_iPad {
+        bt4_iPad: bt3_iPad {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 8 &bt BT_SEL 2>;
+            bindings = <&to 8 &bt BT_SEL 4>;
             label = "BT3_IPAD";
         };
 
-        bt1_LabWin: bt1_LabWin {
+        bt3_LabWin: bt1_LabWin {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&to 4 &bt BT_SEL 3>;
@@ -310,7 +310,7 @@
 
         Bluetooth {
             bindings = <
-&bt0_mac  &bt1_LabWin  &bt2_HomeWin  &bt3_iPad  &trans                    &bt BT_CLR_ALL  &trans  &trans  &trans  &trans
+&bt0_mac  &bt3_LabWin  &bt1_HomeWin  &bt4_iPad  &trans                    &bt BT_CLR_ALL  &trans  &trans  &trans  &trans
 &trans    &trans       &trans        &trans     &trans                    &trans          &trans  &trans  &trans  &trans
 &trans    &trans       &trans        &trans     &trans                    &trans          &trans  &trans  &trans  &trans
 &trans    &trans       &trans        &trans     &trans  &trans    &trans  &trans                  &trans  &trans  &trans
