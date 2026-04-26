@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&zip_xy_to_scroll_mapper>;
     };
 };
@@ -139,32 +139,18 @@
     };
 
     macros {
-        bt0_mac: bt_win {
+        bt1_mac: bt1_mac {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 0 &bt BT_SEL 0>;
-            label = "BT_WIN";
+            bindings = <&bt BT_SEL 1 &to 0>;
+            label = "BT1_MAC";
         };
 
-        bt1_HomeWin: bt2_mac {
+        bt2_LabWin: bt2_LabWin {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 4 &bt BT_SEL 1>;
-            label = "BT2_MAC";
-        };
-
-        bt4_iPad: bt3_iPad {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&to 8 &bt BT_SEL 4>;
-            label = "BT3_IPAD";
-        };
-
-        bt3_LabWin: bt1_LabWin {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&to 4 &bt BT_SEL 3>;
-            label = "BT1_LABWIN";
+            bindings = <&bt BT_SEL 2 &to 4>;
+            label = "BT2_LABWIN";
         };
     };
 
@@ -310,10 +296,10 @@
 
         Bluetooth {
             bindings = <
-&bt0_mac  &bt3_LabWin  &bt1_HomeWin  &bt4_iPad  &trans                    &bt BT_CLR_ALL  &trans  &trans  &trans  &trans
-&trans    &trans       &trans        &trans     &trans                    &trans          &trans  &trans  &trans  &trans
-&trans    &trans       &trans        &trans     &trans                    &trans          &trans  &trans  &trans  &trans
-&trans    &trans       &trans        &trans     &trans  &trans    &trans  &trans                  &trans  &trans  &trans
+&bt1_mac  &bt2_LabWin  &none   &none   &trans                    &bt BT_CLR_ALL  &trans  &trans  &trans  &trans
+&trans    &trans       &trans  &trans  &trans                    &trans          &trans  &trans  &trans  &trans
+&trans    &trans       &trans  &trans  &trans                    &trans          &trans  &trans  &trans  &trans
+&trans    &trans       &trans  &trans  &trans  &trans    &trans  &trans                  &trans  &trans  &trans
             >;
         };
     };
