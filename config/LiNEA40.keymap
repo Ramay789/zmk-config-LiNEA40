@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&zip_xy_to_scroll_mapper>;
     };
 };
@@ -181,7 +181,7 @@
             bindings = <
 &kp PERCENT      &kp KP_NUMBER_9  &kp KP_NUMBER_8  &kp KP_NUMBER_7  &kp BACKSLASH                    &kp KP_ASTERISK    &kp GRAVE      &kp UP_ARROW  &kp KP_EQUAL  &kp KP_PLUS
 &kp DOLLAR       &kp KP_NUMBER_6  &kp KP_NUMBER_5  &kp KP_NUMBER_4  &kp PIPE                         &kp KP_SLASH       &kp LEFT       &kp DOWN      &kp RIGHT     &kp KP_MINUS
-&kp KP_NUMBER_0  &kp KP_NUMBER_3  &kp KP_NUMBER_2  &kp KP_NUMBER_1  &kp EQUAL                        &kp LA(LS(MINUS))  &kp LA(MINUS)  &kp COMMA     &kp PERIOD    &trans
+&kp KP_NUMBER_0  &kp KP_NUMBER_3  &kp KP_NUMBER_2  &kp KP_NUMBER_1  &kp EQUAL                        &kp LA(LS(MINUS))  &kp LA(MINUS)  &exclamation  &question     &trans
 &trans           &trans           &trans           &trans           &trans         &trans    &trans  &trans                            &trans        &trans        &trans
             >;
 
@@ -190,10 +190,10 @@
 
         mac_MissionControll {
             bindings = <
-&none  &none               &kp LC(UP_ARROW)  &none                &none                         &none   &none     &kp UP_ARROW  &none            &kp LG(LS(NUMBER_3))
-&none  &kp LC(LEFT_ARROW)  &kp LC(DOWN)      &kp LC(RIGHT_ARROW)  &none                         &none   &kp LEFT  &kp DOWN      &kp RIGHT_ARROW  &kp LG(LS(F5))
-&none  &none               &none             &none                &none                         &none   &none     &kp COMMA     &kp PERIOD       &trans
-&none  &none               &none             &kp BACKSPACE        &trans  &kp DELETE    &trans  &trans            &trans        &trans           &trans
+&none  &none               &kp LC(UP_ARROW)  &none                &none                                         &none   &none     &kp UP_ARROW  &none            &kp LG(LS(NUMBER_3))
+&none  &kp LC(LEFT_ARROW)  &kp LC(DOWN)      &kp LC(RIGHT_ARROW)  &none                                         &none   &kp LEFT  &kp DOWN      &kp RIGHT_ARROW  &kp LG(LS(F5))
+&none  &none               &none             &none                &none                                         &none   &none     &exclamation  &question        &trans
+&none  &none               &none             &kp BACKSPACE        &trans  &kp DELETE    &mt LEFT_ALT BACKSPACE  &trans            &trans        &trans           &trans
             >;
 
             sensor-bindings = <&re_kp LG(EQUAL) LG(MINUS)>;
