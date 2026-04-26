@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&zip_xy_to_scroll_mapper>;
     };
 };
@@ -308,10 +308,10 @@
 
         Bluetooth {
             bindings = <
-&bt0_win  &bt1_LabWin  &bt2_mac  &bt3_iPad  &trans                    &trans  &trans  &trans  &trans  &trans
-&trans    &trans       &trans    &trans     &trans                    &trans  &trans  &trans  &trans  &trans
-&trans    &trans       &trans    &trans     &trans                    &trans  &trans  &trans  &trans  &trans
-&trans    &trans       &trans    &trans     &trans  &trans    &trans  &trans          &trans  &trans  &trans
+&bt0_win  &bt1_LabWin  &bt2_mac  &bt3_iPad  &trans                    &bt BT_CLR_ALL  &trans  &trans  &trans  &trans
+&trans    &trans       &trans    &trans     &trans                    &trans          &trans  &trans  &trans  &trans
+&trans    &trans       &trans    &trans     &trans                    &trans          &trans  &trans  &trans  &trans
+&trans    &trans       &trans    &trans     &trans  &trans    &trans  &trans                  &trans  &trans  &trans
             >;
         };
     };
