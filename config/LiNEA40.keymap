@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,,,,,,,,,,
+            //スクロール方向を逆転,,,,,,,,,,,,,,,
             <&zip_xy_to_scroll_mapper>;
     };
 };
@@ -167,7 +167,7 @@
             bindings = <
 &none  &none               &kp LG(UP_ARROW)  &none                &none                         &none   &none     &kp UP_ARROW  &none            &kp LG(PRINTSCREEN)
 &none  &kp LG(LEFT_ARROW)  &kp LG(DOWN)      &kp LG(RIGHT_ARROW)  &none                         &none   &kp LEFT  &kp DOWN      &kp RIGHT_ARROW  &kp PRINTSCREEN
-&none  &none               &none             &none                &none                         &none   &none     &kp COMMA     &kp PERIOD       &kp LEFT_PARENTHESIS
+&none  &none               &none             &none                &none                         &none   &none     &kp COMMA     &kp PERIOD       &trans
 &none  &none               &none             &kp BACKSPACE        &trans  &kp DELETE    &trans  &trans            &trans        &trans           &trans
             >;
 
