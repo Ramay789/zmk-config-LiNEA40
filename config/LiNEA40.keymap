@@ -56,7 +56,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,
+            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,
             <&zip_xy_to_scroll_mapper>;
     };
 };
@@ -217,10 +217,10 @@
 
         Mark_Blacket {
             bindings = <
-&kp AMPERSAND  &kp LEFT_BRACE  &kp RIGHT_BRACE   &kp LEFT_PARENTHESIS  &kp BACKSLASH                        &kp KP_ASTERISK    &kp GRAVE      &kp UP_ARROW  &kp KP_EQUAL  &kp KP_PLUS
-&kp AT         &kp SEMICOLON   &kp COLON         &kp DOUBLE_QUOTES     &kp SQT                              &kp KP_SLASH       &kp LEFT       &kp DOWN      &kp RIGHT     &kp KP_MINUS
-&kp CARET      &kp LESS_THAN   &kp GREATER_THAN  &kp LEFT_BRACKET      &kp RIGHT_BRACKET                    &kp LA(LS(MINUS))  &kp LA(MINUS)  &kp COMMA     &kp PERIOD    &trans
-&trans         &trans          &trans            &trans                &trans             &trans    &trans  &trans                            &trans        &trans        &trans
+&kp AMPERSAND  &kp LEFT_BRACE  &kp RIGHT_BRACE   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                    &kp KP_ASTERISK    &kp GRAVE      &kp UP_ARROW  &kp KP_EQUAL  &kp KP_PLUS
+&kp AT         &kp SEMICOLON   &kp COLON         &kp DOUBLE_QUOTES     &kp SQT                                  &kp KP_SLASH       &kp LEFT       &kp DOWN      &kp RIGHT     &kp KP_MINUS
+&kp CARET      &kp LESS_THAN   &kp GREATER_THAN  &kp LEFT_BRACKET      &kp RIGHT_BRACKET                        &kp LA(LS(MINUS))  &kp LA(MINUS)  &kp COMMA     &kp PERIOD    &trans
+&trans         &trans          &trans            &trans                &trans                 &trans    &trans  &trans                            &trans        &trans        &trans
             >;
 
             sensor-bindings = <&re_kp C_VOLUME_UP C_VOLUME_DOWN>;
